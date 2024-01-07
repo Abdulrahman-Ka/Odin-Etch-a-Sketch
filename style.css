@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap");
+:root {
+  --primary-dark: #952323;
+  --secondry-dark: #A73121;
+  --primary-light: #F2E8C6;
+  --secondry-light: #DAD4B5;
+  --thirdly-light: #C3E2C2;
+}
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--secondry-light);
+  background-color: var(--primary-dark);
+  font-family: "Pixelify Sans", sans-serif;
+}
+header {
+  padding: 1.5em;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  background-color: var(--primary-light);
+  width: 400px;
+  height: 400px;
+  padding: 1px;
+}
+.container::after {
+  content: "";
+  background-color: var(--secondry-light);
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: -7px;
+  left: -7px;
+}
+.edit-btn {
+  font-size: 16px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  font-family: inherit;
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 1px solid var(--secondry-light);
+  cursor: pointer;
+  position: relative;
+  background-color: transparent;
+  touch-action: manipulation;
+}
+
+.edit-btn:after {
+  content: "";
+  background-color: var(--thirdly-light);
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.8s;
+}
+
+.edit-btn:hover:after,
+.edit-btn:focus:after {
+  top: 0px;
+  left: 0px;
+}
+
+@media (min-width: 768px) {
+  .edit-btn {
+    padding: 13px 50px 13px;
+  }
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-size: 1.2em;
+  padding: 1em;
+  text-align: center;
+}
+.fa-github {
+  width: 25px;
+  height: 25px;
+  transition: transform 0.3s ease-in-out;
+}
+.fa-github:hover {
+  transform: rotate(360deg) scale(1.2);
+}
+footer a {
+  text-decoration: none;
+  color: inherit;
+}
